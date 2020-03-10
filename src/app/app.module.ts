@@ -13,6 +13,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
+import { ServerElementComponent } from './server-elemnt/server-elemnt.component';
 
 
 // import { ServerComponent } from './server/server.component';
@@ -28,9 +29,10 @@ import { CockpitComponent } from './cockpit/cockpit.component';
     ShoppingListComponent,
     ShoppingEditComponent,
     RecipeItemComponent,
-    CockpitComponent
-    // ServerComponent,
-    // ServersComponent
+    CockpitComponent,
+    ServerElementComponent,
+    //  ServerComponent,
+    //  ServersComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,6 @@ import { CockpitComponent } from './cockpit/cockpit.component';
   
   ],
   providers: [],
-  bootstrap: [AppComponent]
-})
+  bootstrap: [AppComponent],
+  })
 export class AppModule { }

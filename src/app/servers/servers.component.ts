@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   // selector: '[app-servers]',
   // selector: '.app-servers',
   selector: 'app-servers',
-  template: `
-    <app-server></app-server>
-    <app-server></app-server>`,
+  // template: `
+  //   <app-server></app-server>
+  //   <app-server></app-server>`,
   templateUrl: './servers.component.html',
   styleUrls: ['./servers.component.css']
 })
@@ -16,6 +16,7 @@ export class ServersComponent implements OnInit {
   serverName = 'Testserver';
   serverCreated = false;
   servers = ['Testserver','Testserver2'];
+  @Input() srvElement:[ ]
 
   constructor() {
     setTimeout(() => {

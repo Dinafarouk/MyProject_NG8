@@ -1,53 +1,59 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
-//   styles: [`
-//   h3 {
-//     color: dodgerblue;
-//   }
-// `]
+  //   styles: [`
+  //   h3 {
+  //     color: dodgerblue;
+  //   }
+  // `]
 })
 export class AppComponent {
-  servers =[];
+  @Input()
+  serverElemnts = [{ type: 'server', name: 'TestServer', content: 'Just a test !' }];
 
-  // onAddServer() {
-  //   this.servers.push('Another Server');
-  // }
+  onServerAdded(serverData: { serveName: string, serverContent: string }) {
+    this.serverElemnts.push(
+      {
+        type: 'server',
+        name: serverData.serveName,
+        content: serverData.serverContent
+      }
+    );
 
-  onRemoveServer(id: number) {
-    const position = id + 1;
-    this.servers.splice(position, 1);
+    console.log("this.serverElemnts", this.serverElemnts);
+
   }
 
-
-
-
-  serverElements = [];
-  newServerName = '';
-  newServerContent = '';
-
-  onAddServer() {
-    this.serverElements.push({
-      type: 'server',
-      name: this.newServerName,
-      content: this.newServerContent
-    });
-  }
-
-  onAddBlueprint() {
-    this.serverElements.push({
+  onBlueprintAdded(blueprintData: { serverName: string, serverContent: string }) {
+    this.serverElemnts.push({
       type: 'blueprint',
-      name: this.newServerName,
-      content: this.newServerContent
+      name: blueprintData.serverName,
+      content: blueprintData.serverContent
     });
   }
 }
 
 
 
+
+    // servers =[];
+
+
+    // onRemoveServer(id: number) {
+    //   const position = id + 1;
+    //   this.servers.splice(position, 1);
+    // }
+
+
+
+  // onAddServer() {
+  //   this.servers.push('Another Server');
+  // }
+
+  // }
 
 
 
@@ -61,5 +67,4 @@ export class AppComponent {
 //    this.showSecret = !this.showSecret;
 //    this.log.push(this.log.length + 1);
 //  }
-
 
